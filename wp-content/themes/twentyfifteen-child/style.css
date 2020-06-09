@@ -1,0 +1,46 @@
+/*
+Theme Name: Twenty Fifteen Child
+description: >-
+  Twenty Fifteen Child Theme
+Author: Alex Charland
+Template: twentyfifteen
+Version: 1.0.0
+*/
+
+.entry-content {
+    padding: 0 4rem;
+}
+
+.full-width-body::before {
+   display: none;
+}
+
+.site-content.full-width {
+   float: none;
+   margin: 0 auto;
+}
+
+.site-header.full-width {
+   background-color: #fff;
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+   margin: 0;
+   padding: 2% 0;
+}
+
+.site-branding.full-width {
+   margin: 0 auto;
+   width: 58.8235%;
+}
+
+.site-footer.full-width {
+   float: none;
+   margin: 0 auto;
+}
+
+.wp-post-image {
+  width: 100%;
+}
+
+.hentry {
+  max-width: 100%;
+}

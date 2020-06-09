@@ -1,0 +1,59 @@
+/*
+Theme Name: Galaxis Child
+description: >-
+  Galaxis Child Theme
+Author: Alex Charland
+Template: galaxis
+Version: 1.0.0
+*/
+
+#site-navigation {
+  display: none;
+}
+
+#footer {
+  display: none;
+}
+
+.site-header {
+  background-color: #faf600;
+  padding: 0 3rem;
+}
+
+.site-link {
+  color: #0d0e12 !important;
+}
+
+.flex-container {
+  display: flex;
+  height: 92vh;
+}
+
+.articles-wrapper {
+  flex-grow: 2;
+  padding: 2rem 3rem;
+}
+
+.articles-heading {
+  margin: 0 0 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gray;
+}
+
+.sidebar {
+  width: 25rem;
+  background-color: #fffda1;
+}
+
+.widget.gx-card-content {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid gray;
+  border-radius: 0;
+  padding: 3rem 0;
+  margin: 0 2rem;
+} 
+
+.widget-title {
+  border: none;
+}
