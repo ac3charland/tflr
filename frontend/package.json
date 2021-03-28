@@ -1,27 +1,38 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "CHANGE_ME_react-template",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
+    "moment": "^2.25.3",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
+    "start-background": "pm2 start npm -- start",
+    "kill-background": "pm2 delete npm",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "jest": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .jsx --ext .js src cypress",
+    "cypress:open": "sh cypress/run-cypress.sh case:open",
+    "cypress:test": "sh cypress/run-cypress.sh",
+    "cypress:approve": "sh cypress/run-cypress.sh case:approve",
+    "test:ci": "npm run lint && npm run jest && npm run cypress:test",
+    "test": "npm run test:ci",
+    "major": "npm version --major",
+    "minor": "npm version --minor",
+    "patch": "npm version --patch"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -34,5 +45,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "cypress": "^4.5.0",
+    "cypress-visual-regression": "^1.5.7",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint-plugin-jest": "^23.11.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "pm2": "^4.4.0",
+    "redux-mock-store": "^1.5.4"
   }
 }

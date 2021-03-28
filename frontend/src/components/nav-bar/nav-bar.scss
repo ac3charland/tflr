@@ -1,0 +1,91 @@
+@import "../../globals.scss";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+  @include transition(background-color 0.3s, height 0.1s);
+
+
+  &.active {
+    background-color: $secondary-background-color;
+
+    .navbar__heading {
+      font-size: 2rem;
+    }
+
+    @include small-screen {
+      .navbar__link {
+        background-color: $secondary-background-color;
+        @include transition(background-color 0.3s);
+      }
+    }
+  }
+  
+  &__heading {
+    font-size: 4rem;
+    padding: 0;
+    margin: 0;
+
+    @include transition(font-size 0.2s);
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__link {
+    padding: 0.5rem 0;
+    margin-left: 3rem;
+    font-size: $font-size-large;
+  }
+
+  .icon {
+    color: black;
+    display: none;
+    padding: 2rem 2rem 1rem;
+  }
+
+  @include small-screen {
+    padding: 1rem 2rem;
+
+    &__heading {
+      font-size: $font-size-small;
+    }
+
+    &__links {
+      flex-direction: column;
+      text-align: right;
+    }
+
+    &__link {
+      background-color: transparent;
+      margin: 0 -2rem 0 0;
+      padding: 1rem;
+      font-size: $font-size-small;
+
+      &.closed {
+        opacity: 0%;
+        display: none;
+      }
+
+      &.open {
+        @include animation("fadeInFromNone .2s");
+      }
+    }
+
+    .icon {
+      display: block;
+      font-size: 1.5rem;
+      padding: 0;
+      text-align: right;
+    }
+  }
+}

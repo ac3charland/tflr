@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# React Template App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is meant to serve as the basis for my future React apps. It has my preferred technologies, testing frameworks, and project structure pre-configured so that I don't have to set up the same boilerplate with every project. If you're curious about my opinions and preferences when it comes to frontend development, this is a great place to look!
 
-## Available Scripts
+## To Copy*:
 
-In the project directory, you can run:
+0. Clone this project if it is not already on your machine.
+0. When you want to create a new app based on this template, create a new directory for the project with `mkdir [new-project-name-here]`
+0. Copy/paste this repo's files & folders into the new directory.
+    - Make sure you copy the hidden `.eslintrc.js` and `.gitignore` files. (Display these in Finder by hitting Command + Shift + . ) However, you probably don't want to copy the `.git` or `node_modules/` directories.
+0. Install packages with `npm i`
+0. Confirm everything is working as expected by running `npm run test`
+0. Setup the new project's git repo with `git init`
+    - At this point, if you don't want to commit a bunch of CHANGE_ME variable names, you should change these values. See **"To Customize"** below.
+0. Create an initial commit with `git add . && git commit -m "Initial commit from template app"`.
+0. Create a new remote repository for the app on your preferred host (GitHub, Bitbucket, etc.)
+0. Add the remote origin with `git remote add origin [url-provided-by-repo]`
+0. Commit to remote with `git push -u origin main`
+0. Begin development!
 
-### `npm start`
+<sup>*If these instructions seem overly specific, it's because I don't trust my own memory--not because I don't trust your capabilities. I've been burned one too many times by telling myself "Surely I'll remember how to do *this* forever!" As a result I lean toward excess specificity in things like this, just in case.</sup>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## To Customize:
+There are several fields which will be different for every app, like site title, footer copyright owner, site icon, etc. Find these by searching for `CHANGE_ME` across the entire app directory, including file names. Change these fields/files.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## To Develop:
+- Install packages: `npm i`
+- Start app: `npm start`
+- Start app in background using `pm2`: `npm run start-background`
+- Kill background app process: `npm run kill-background`
+- Run all tests (unit, visual, integration, and lint): `npm run test`
+- Run CI-only tests (all except visual): `npm run test:ci`
+- Run unit tests: `npm run jest`
+- Run lint: `npm run lint`
+- Run visual regression tests: `npm run backstop:test`
+- Open integration tests: `npm run cypress:open`
 
-### `npm test`
+## Project Structure
+The app's JSX files are categorized into pages and components. Redux actions and reducers are housed in their own directories as well. The app's overall styles are set in `index.scss` and its style constants are defined in `globals.scss`. Each `.scss` file should import `globals.scss`. Linter preferences are defined in `.eslintrc.js` and unit test setup is performed in `setupTests.js`. Backstop and Cypress tests are configured in their own top-level directories.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+0. **UI Framework**: [React](https://reactjs.org/) (using Create React App)
+0. **State Manager**: [Redux](https://redux.js.org/)
+0. **Package Manager**: [NPM](https://www.npmjs.com/)
+0. **Routing**: [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
+0. **CSS Processor**: [SASS](https://sass-lang.com/)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Testing Frameworks
+0. **Unit Tests**: [Jest](https://jestjs.io/)/[Enzyme](https://github.com/enzymejs/enzyme)
+0. **Linter**: [ESLint](https://eslint.org/)
+0. **Visual Regression Tests**: [BackstopJS](https://garris.github.io/BackstopJS/)
+0. **Integration Tests**: [Cypress](https://www.cypress.io/)

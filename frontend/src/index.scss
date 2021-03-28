@@ -1,0 +1,97 @@
+@import "./globals.scss";
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: $sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $font-size-normal;
+}
+
+code {
+  font-family: $monospace;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: right;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p {
+  font-size: $font-size-large;
+
+  @include small-screen {
+    font-size: $font-size-normal;
+  }
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.content-wrapper {
+  position: relative;
+  font-size: $font-size-normal;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page-wrapper {
+  flex-grow: 2;
+  padding: 2rem 4rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $content-width;
+  box-sizing: border-box;
+
+  @include small-screen {
+    padding: 1rem 2rem;
+  }
+}
