@@ -32,7 +32,11 @@
         color: black;
         position: absolute;
         right: 0;
-        top: 50%;
+        top: 47%;
+
+        &--icon {
+            max-height: 2.5rem;
+        }
     }
 
     &__site-header {

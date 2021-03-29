@@ -4,6 +4,9 @@ import moment from 'moment'
 import {ALEX_PORTFOLIO_URL} from '../../utils/constants'
 import {Link} from 'react-router-dom'
 
+import ChevronRight from '../../images/chevronright.png'
+import ChevronLeft from '../../images/chevronleft.png'
+
 import './side-bar.scss'
 
 
@@ -22,7 +25,9 @@ const SideBar = () => {
                     <span>{open ? 'Repeat' : 'R'}</span>
                 </h1>
             </Link>
-            <button className={`${cb}__button`} onClick={() => setOpen(!open)}>{open ? '<' : '>'}</button>
+            <button className={`${cb}__button`} onClick={() => setOpen(!open)}>
+                <img className={`${cb}__button--icon`} src={open ? ChevronLeft : ChevronRight} alt=''/>
+            </button>
             <footer className={`${cb}__footer`}>
                 <div>Copyright &copy; {moment().format('YYYY')} <a href={ALEX_PORTFOLIO_URL}>Alex Charland</a></div>
             </footer>
