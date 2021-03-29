@@ -1,9 +1,9 @@
 {
-  "name": "CHANGE_ME_react-template",
+  "name": "tflr",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "moment": "^2.25.3",
+    "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -1,0 +1,50 @@
+@import '../../globals.scss';
+
+.sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $tflr-yellow;
+    width: 22rem;
+    padding: 1rem 2rem;
+    @include transition(width 0.3s);
+    overflow-x: hidden;
+
+    &__closed {
+        width: 3rem;
+
+        .sidebar__footer {
+            display: none;
+        }
+    }
+
+    &__home {
+        text-decoration: none;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    &__button {
+        font-size: 4rem;
+        color: black;
+        position: absolute;
+        right: 0;
+        top: 50%;
+    }
+
+    &__site-header {
+        span {
+            display: block;
+            font-size: 4rem;
+            font-weight: 800;
+        }
+    }
+
+    &__footer {
+        text-align: center;
+        white-space: nowrap;
+    }
+}
